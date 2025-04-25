@@ -10,4 +10,4 @@ Premiers exercices de Javascript
 
 ## 🖼️ Aperçu visuel (optionnel)
 
-[Live Demo](https://ocrzia.github.io/JS4-Random-number/)
+[Live Demo](https://ocrzia.github.io/JS6-Shopping-list/)
