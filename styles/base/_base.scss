@@ -1,0 +1,72 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to top, #ffb7d9, #e9ecef);
+  height: 100vh;
+}
+h1 {
+  text-align: center;
+  font-weight: normal;
+  margin-top: 50px;
+}
+form {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+input {
+  border:1px solid gray;
+  padding:5px 10px;
+  font-family: inherit;
+  outline:none;
+}
+[type="text"] {
+  border-radius:5px 0 0 5px;
+  transition:.3s all ease-in-out;
+  &:focus {
+    box-shadow:0 0 10px rgba(0,0,0,0.15);
+  }
+}
+[type="submit"] {
+  border-radius:0 5px 5px 0;
+  cursor:pointer;
+}
+.result {
+  text-align: center;
+  margin-top: 10px;
+  &.pair {
+    color:green;
+  }
+  &.impair {
+    color:palevioletred;
+  }
+}
+h2 {
+  font-weight: normal;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.shopping-list-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  background:#fff;
+  max-width:300px;
+  margin:0 auto;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  margin-top: 50px;
+  box-shadow: 0 0 50px rgba(0,0,0,0.1);
+}
+.bag-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  span {
+    cursor: pointer;
+  }
+}
+.message {
+  text-align: center;
+}
