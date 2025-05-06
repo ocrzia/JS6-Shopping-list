@@ -16,26 +16,31 @@ const shoppingListItems = [];
 // 🎊 Fonctionnalités
 // ==============================
 
-// ➕ Ajouter un élément ➕
+const generateList = (item, indice) => {
+  shoppingList.innerHTML += `
+    <div class="bag-item">${item} <span class="delete" data-index="${indice}" title="Supprimer le ${item.toLowerCase()}">❌</span></div>
+    `;
+}
 
+// ➕ Ajouter un élément ➕
 const addItem = () => {
   // On vérifie s'il y a une value dans le champ utilisateur
   if (shoppingItem.value) {
     shoppingListItems.push(shoppingItem.value);    
     shoppingItem.value = "";
     let currentItem = shoppingListItems[shoppingListItems.length-1];
-    shoppingList.innerHTML += `
-    <div class="bag-item">${currentItem} <span class="delete" data-index="${shoppingListItems.length-1}" title="Supprimer le ${currentItem.toLowerCase()}">❌</span></div>
-    `;
+    generateList(currentItem, shoppingListItems.length-1);
     itemsCount.textContent = shoppingListItems.length;
   } else {
     msg.textContent = "🚨 N'oublie pas d'écrire quelque chose avant d'envoyer 🚨";
     setTimeout(() => {
       msg.textContent = ""
     }, 2000);
-    addButton.select();
+    shoppingItem.select();
   }
 };
+
+
 
 // On vérifie si la liste est vide
 const checkEmpty = () => {
@@ -53,12 +58,7 @@ const deleteItem = (sonIndex) => {
 
   // On est obligés de boucler pour regénérer les bons index
   shoppingListItems.forEach((item, index) => {
-    shoppingList.innerHTML += `
-      <div class="bag-item" data-index="${index}">
-        ${item} 
-        <span class="delete" data-index="${index}" title="Supprimer le ${item.toLowerCase()}">❌</span>
-      </div>
-    `;
+    generateList(item, index);
   });
 }
 
